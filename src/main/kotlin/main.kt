@@ -1,22 +1,10 @@
+import model.Ui
+
 fun main(args: Array<String>) {
 
-    // funciones
+    // objects
 
-    fun makeRecipe() {
-        val foodList = listOf<String>("Agua","Leche","Carne","Verduras","Frutas","Cereal","Huevos","Aceites")
-
-        for ((index,food) in foodList.withIndex()) {
-            index.plus(1)
-            println("$index. $food")
-        }
-
-        println("Escoje un numero: ")
-        var response = readLine()
-    }
-
-    fun viewRecipe() {
-        println(":: Recetas ::")
-    }
+    val systemFunctions = Ui()
 
     //MENU
 
@@ -32,8 +20,8 @@ fun main(args: Array<String>) {
         var response = readLine()
 
         when(response) {
-            "1" -> println("Haciendo receta ${makeRecipe()}")
-            "2" -> println("Viendo receta ${viewRecipe()}")
+            "1" -> println("Haciendo receta ${systemFunctions.makeRecipe()}")
+            "2" -> println("Viendo receta ${systemFunctions.viewRecipe()}")
             "3" -> println("Saliendo")
         }
 
