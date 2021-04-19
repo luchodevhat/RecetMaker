@@ -2,10 +2,21 @@ package model
 
 class Ui {
 
+    //  instanciaciones
+
+    val aceite: Aceites = Aceites(1)
+    val cereales: Cereales = Cereales(1)
+    val frutas: Frutas = Frutas(1)
+    val verduras: Verduras = Verduras(1)
+    val carnes: Carnes = Carnes(1)
+    val lacteos: Lacteos = Lacteos(1)
+
+
+
     // funciones
 
     fun makeRecipe() {
-        val foodList = listOf<String>("Agua","Leche","Carne","Verduras","Frutas","Cereal","Huevos","Aceites")
+        val foodList = listOf<String>("Agua","Lacteos","Carnes","Verduras","Frutas","Cereales","Huevos","Aceites")
 
         for ((index,food) in foodList.withIndex()) {
             index.plus(1)
@@ -13,7 +24,23 @@ class Ui {
         }
 
         println("Escoje un numero: ")
-        var response = readLine()
+        var response = readLine()!!.toInt()
+
+        // validacion
+        if (response.compareTo(7) >0) {
+            println("Error, los numeros tienen que ser de 0 al 7")
+        }else {
+            when(response) {
+                0 -> println("Agua")
+                1 -> println(lacteos.escogerCantidad())
+                2 -> println(carnes.escogerCantidad())
+                3 -> println(verduras.escogerCantidad())
+                4 -> println(frutas.escogerCantidad())
+                5 -> println(cereales.escogerCantidad())
+                6 -> println("Huevos")
+                7 -> println(aceite.escogerCantidad())
+            }
+        }
     }
 
     fun viewRecipe() {
