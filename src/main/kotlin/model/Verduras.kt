@@ -13,8 +13,8 @@ class Verduras(cantidad: Int) : Productos(cantidad), Icantidad {
         var respuesta = readLine()!!.toInt()
 
         // validacion
-        if (respuesta.compareTo(3) > 0) {
-            println("Error, la respuesta tiene que ser de 0 a 3")
+        if (respuesta.compareTo(4) > 0) {
+            println("Error, la respuesta tiene que ser de 0 a 4")
             escogerCantidad()
         } else {
             println("Escoje la cantidad")

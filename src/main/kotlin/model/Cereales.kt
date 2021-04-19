@@ -14,8 +14,8 @@ class Cereales(cantidad: Int) : Productos(cantidad), Icantidad {
         var respuesta = readLine()!!.toInt()
 
         // validacion
-        if (respuesta.compareTo(3) > 0) {
-            println("Error, la respuesta tiene que ser de 0 a 3")
+        if (respuesta.compareTo(5) > 0) {
+            println("Error, la respuesta tiene que ser de 0 a 5")
             escogerCantidad()
         } else {
             println("Escoje la cantidad")

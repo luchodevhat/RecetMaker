@@ -22,7 +22,7 @@ fun main(args: Array<String>) {
         when(response) {
             "1" -> println("Haciendo receta ${systemFunctions.makeRecipe()}")
             "2" -> println("Viendo receta ${systemFunctions.viewRecipe()}")
-            "3" -> println("Saliendo")
+            "3" -> println("Saliendo, gracias por escogernos")
         }
 
     }while (!(response?.equals("3") ?: ("3" === null))
