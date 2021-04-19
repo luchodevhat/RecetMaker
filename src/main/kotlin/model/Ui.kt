@@ -4,12 +4,12 @@ class Ui {
 
     //  instanciaciones
 
-    val aceite: Aceites = Aceites(1)
-    val cereales: Cereales = Cereales(1)
-    val frutas: Frutas = Frutas(1)
-    val verduras: Verduras = Verduras(1)
-    val carnes: Carnes = Carnes(1)
-    val lacteos: Lacteos = Lacteos(1)
+    val aceite: Aceites = Aceites("none", 1)
+    val cereales: Cereales = Cereales("none", 1)
+    val frutas: Frutas = Frutas("none", 1)
+    val verduras: Verduras = Verduras("none", 1)
+    val carnes: Carnes = Carnes("none", 1)
+    val lacteos: Lacteos = Lacteos("none", 1)
 
 
 

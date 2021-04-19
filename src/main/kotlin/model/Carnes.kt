@@ -1,6 +1,6 @@
 package model
 
-class Carnes(cantidad: Int) : Productos(cantidad), Icantidad {
+class Carnes(ingrediente: String, cantidad: Int) : Productos(ingrediente, cantidad), Icantidad {
 
     val alimentos = listOf<String>("Carne roja", "Carne blanca", "Carne de cerdo", "Carne de cabra")
 
