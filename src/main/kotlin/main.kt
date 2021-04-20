@@ -21,8 +21,8 @@ fun main(args: Array<String>) {
 
         when(response) {
             "1" -> println("Haciendo receta ${systemFunctions.makeRecipe()}")
-            "2" -> println("Viendo receta ${systemFunctions.createRecipe()}")
-            "3" -> println("Viendo receta ${systemFunctions.viewRecipe()}")
+            "2" -> println("Creando receta ${systemFunctions.createRecipe()}")
+            "3" -> println("Cargando recetas ${systemFunctions.viewRecipe()}")
             "4" -> println("Saliendo, gracias por escogernos")
         }
 
