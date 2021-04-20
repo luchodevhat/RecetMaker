@@ -68,6 +68,15 @@ class Ui: Recetas() {
             receta.recetasIngredientes.add(ingredientes.toString())
             println("Receta guardada exitosamente")
 
+            // validacion para limpiar los campos en receta creada
+            aceite.ingrediente = mutableListOf()
+            carnes.ingrediente = mutableListOf()
+            cereales.ingrediente = mutableListOf()
+            frutas.ingrediente = mutableListOf()
+            lacteos.ingrediente = mutableListOf()
+            verduras.ingrediente = mutableListOf()
+
+
         }else {
             makeRecipe()
         }
@@ -78,6 +87,7 @@ class Ui: Recetas() {
         println("Las recetas creadas hasta el momento son")
 
         for (i in receta.recetasNombre) {
+            i.plus(1)
             println("Nombre: ${receta.recetasNombre}\n" +
                     "Ingredientes: ${receta.recetasIngredientes}")
         }
