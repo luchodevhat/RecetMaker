@@ -1,4 +1,4 @@
 package model
 
-abstract class Productos(var ingrediente: String, var cantidad: Int) {
+abstract class Productos(var cantidad: Int) {
 }

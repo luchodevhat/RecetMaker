@@ -1,7 +1,8 @@
 package model
 
-class Lacteos(ingrediente: String, cantidad: Int) : Productos(ingrediente, cantidad), Icantidad {
+class Lacteos(cantidad: Int) : Productos(cantidad), Icantidad {
 
+    var ingrediente = mutableListOf<String>()
     val alimentos = listOf<String>("Leche", "Queso", "Natilla", "Yogurt")
 
     override fun escogerCantidad() {
@@ -19,7 +20,21 @@ class Lacteos(ingrediente: String, cantidad: Int) : Productos(ingrediente, canti
         } else {
             println("Escoje la cantidad")
             this.cantidad = readLine()!!.toInt()
-            println("La cantidad es de $cantidad")
+            println("La cantidad es de $cantidad\n" +
+                    "Deseas escoger otro ingrediente? yes/no")
+            var respuestaDos = readLine()
+
+            // validacion dos
+            if (respuestaDos.equals("yes") ?: ("yes" === null)) {
+                escogerCantidad()
+            }
+            // validacion para agregar
+            when(respuesta) {
+                0 -> ingrediente.add("Leche")
+                1 -> ingrediente.add("Queso")
+                2 -> ingrediente.add("Natilla")
+                3 -> ingrediente.add("Yogurt")
+            }
         }
     }
 }

@@ -14,18 +14,19 @@ fun main(args: Array<String>) {
                 "\n" +
                 "Selecciona la opción deseada\n" +
                 "1. Hacer una receta\n" +
-                "2. Ver mis recetas\n" +
-                "3. Salir".trimMargin())
+                "2. Guardar receta\n" +
+                ("3. Ver mis recetas\n" + "4. Salir").trimMargin())
 
         var response = readLine()
 
         when(response) {
             "1" -> println("Haciendo receta ${systemFunctions.makeRecipe()}")
-            "2" -> println("Viendo receta ${systemFunctions.viewRecipe()}")
-            "3" -> println("Saliendo, gracias por escogernos")
+            "2" -> println("Viendo receta ${systemFunctions.createRecipe()}")
+            "3" -> println("Viendo receta ${systemFunctions.viewRecipe()}")
+            "4" -> println("Saliendo, gracias por escogernos")
         }
 
-    }while (!(response?.equals("3") ?: ("3" === null))
+    }while (!(response?.equals("4") ?: ("4" === null))
     )
 
 

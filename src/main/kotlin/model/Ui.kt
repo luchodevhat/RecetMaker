@@ -1,15 +1,17 @@
 package model
 
-class Ui {
+class Ui: Recetas() {
 
     //  instanciaciones
 
-    val aceite: Aceites = Aceites("none", 1)
-    val cereales: Cereales = Cereales("none", 1)
-    val frutas: Frutas = Frutas("none", 1)
-    val verduras: Verduras = Verduras("none", 1)
-    val carnes: Carnes = Carnes("none", 1)
-    val lacteos: Lacteos = Lacteos("none", 1)
+    var nombreReceta: String = ""
+    val aceite: Aceites = Aceites(1)
+    val cereales: Cereales = Cereales(1)
+    val frutas: Frutas = Frutas(1)
+    val verduras: Verduras = Verduras( 1)
+    val carnes: Carnes = Carnes(1)
+    val lacteos: Lacteos = Lacteos(1)
+    val receta: Recetas = Recetas()
 
 
 
@@ -43,17 +45,43 @@ class Ui {
         }
     }
 
-    fun viewRecipe() {
-         val recipes = listOf<String>("Arroz con leche", "Batido de chocolate", "Ensalada de frutas")
-        println(":: Recetas ::")
+    fun createRecipe() {
+        println("Elementos escgidos para crear la receta\n")
+        println("Aceites escogidos: ${aceite.ingrediente}")
+        println("Carnes escogidos: ${carnes.ingrediente}")
+        println("Cereales escogidos: ${cereales.ingrediente}")
+        println("Frutas escogidos: ${frutas.ingrediente}")
+        println("Lacteos escogidos: ${lacteos.ingrediente}")
+        println("Verduras escogidos: ${verduras.ingrediente}")
 
-        for ((index,food) in recipes.withIndex()) {
-            println("$index. $food")
-        }
+        println("Deseas guardar esta receta? yes/no")
         var response = readLine()
+
+        // validacion
+        if (response.equals("yes") ?: ("yes" === null)) {
+
+            var ingredientes = listOf<String>(aceite.ingrediente.toString(), carnes.ingrediente.toString(), cereales.ingrediente.toString(),
+                frutas.ingrediente.toString(), lacteos.ingrediente.toString(), verduras.ingrediente.toString())
+            println("Nombre de la receta:")
+            nombreReceta = readLine()!!
+            receta.recetasNombre.add(nombreReceta)
+            receta.recetasIngredientes.add(ingredientes.toString())
+            println("Receta guardada exitosamente")
+
+        }else {
+            makeRecipe()
+        }
+
     }
 
+    fun viewRecipe() {
+        println("Las recetas creadas hasta el momento son")
 
+        for (i in receta.recetasNombre) {
+            println("Nombre: ${receta.recetasNombre}\n" +
+                    "Ingredientes: ${receta.recetasIngredientes}")
+        }
+    }
 
 
 }
