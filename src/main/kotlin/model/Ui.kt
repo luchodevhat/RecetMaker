@@ -28,7 +28,7 @@ class Ui: Recetas() {
         println("Escoje un numero: ")
         var response = readLine()!!.toInt()
 
-        // validacion
+        // validacion de respuesta de los productos
         if (response.compareTo(7) >0) {
             println("Error, los numeros tienen que ser de 0 al 7")
         }else {
@@ -57,15 +57,21 @@ class Ui: Recetas() {
         println("Deseas guardar esta receta? yes/no")
         var response = readLine()
 
-        // validacion
+        // validacion si desea guardar la receta o no
         if (response.equals("yes") ?: ("yes" === null)) {
 
-            var ingredientes = listOf<String>(aceite.ingrediente.toString(), carnes.ingrediente.toString(), cereales.ingrediente.toString(),
-                frutas.ingrediente.toString(), lacteos.ingrediente.toString(), verduras.ingrediente.toString())
+            // guardado de los ingredientes de la receta
+            receta.setRecetasIngrediente(aceite.ingrediente.toString())
+            receta.setRecetasIngrediente(carnes.ingrediente.toString())
+            receta.setRecetasIngrediente( cereales.ingrediente.toString())
+            receta.setRecetasIngrediente( frutas.ingrediente.toString())
+            receta.setRecetasIngrediente(lacteos.ingrediente.toString())
+            receta.setRecetasIngrediente(verduras.ingrediente.toString())
+
+           // guardado del nombre de la receta
             println("Nombre de la receta:")
             nombreReceta = readLine()!!
-            receta.recetasNombre.add(nombreReceta)
-            receta.recetasIngredientes.add(ingredientes.toString())
+            receta.setRecetasNombre(nombreReceta)
             println("Receta guardada exitosamente")
 
             // validacion para limpiar los campos en receta creada
@@ -75,7 +81,6 @@ class Ui: Recetas() {
             frutas.ingrediente = mutableListOf()
             lacteos.ingrediente = mutableListOf()
             verduras.ingrediente = mutableListOf()
-
 
         }else {
             makeRecipe()
@@ -88,8 +93,7 @@ class Ui: Recetas() {
 
         for (i in receta.recetasNombre) {
             i.plus(1)
-            println("Nombre: ${receta.recetasNombre}\n" +
-                    "Ingredientes: ${receta.recetasIngredientes}")
+            println("Nombre: ${receta.getRecetasNombre()}")  // trabajando desde aqui
         }
     }
 
