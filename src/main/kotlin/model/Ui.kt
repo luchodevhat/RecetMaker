@@ -61,18 +61,33 @@ class Ui: Recetas() {
         if (response.equals("yes") ?: ("yes" === null)) {
 
             // guardado de los ingredientes de la receta
-            receta.setRecetasIngrediente(aceite.ingrediente.toString())
-            receta.setRecetasIngrediente(carnes.ingrediente.toString())
-            receta.setRecetasIngrediente( cereales.ingrediente.toString())
-            receta.setRecetasIngrediente( frutas.ingrediente.toString())
-            receta.setRecetasIngrediente(lacteos.ingrediente.toString())
-            receta.setRecetasIngrediente(verduras.ingrediente.toString())
+
+                if (!(aceite.ingrediente?.equals(null) ?: (null == null))) {
+                    receta.setRecetasIngrediente(aceite.ingrediente)
+                }
+                if (!(carnes.ingrediente?.equals(null) ?: (null == null))) {
+                    receta.setRecetasIngrediente(carnes.ingrediente)
+                }
+                if (!(cereales.ingrediente?.equals(null) ?: (null == null))) {
+                    receta.setRecetasIngrediente(cereales.ingrediente)
+                }
+                if (!(frutas.ingrediente?.equals(null) ?: (null == null))) {
+                    receta.setRecetasIngrediente(frutas.ingrediente)
+                }
+                if (!(lacteos.ingrediente?.equals(null) ?: (null == null))) {
+                    receta.setRecetasIngrediente(lacteos.ingrediente)
+                }
+                if (!(verduras.ingrediente?.equals(null) ?: (null == null))) {
+                    receta.setRecetasIngrediente(verduras.ingrediente)
+                }
+
 
            // guardado del nombre de la receta
             println("Nombre de la receta:")
             nombreReceta = readLine()!!
             receta.setRecetasNombre(nombreReceta)
             println("Receta guardada exitosamente")
+
 
             // validacion para limpiar los campos en receta creada
             aceite.ingrediente = mutableListOf()
@@ -91,9 +106,18 @@ class Ui: Recetas() {
     fun viewRecipe() {
         println("Las recetas creadas hasta el momento son")
 
-        for (i in receta.recetasNombre) {
-            i.plus(1)
-            println("Nombre: ${receta.getRecetasNombre()}")  // trabajando desde aqui
+        for ((index,food) in receta.recetasNombre.withIndex()) {
+            var number: Int = 1
+            number.plus(1)
+            println("Nombre: ${receta.getRecetasNombre(index)}")
+            println("Ingredientes:")
+
+            for ((indice,i) in receta.recetasIngredientes.withIndex()) {
+                println("${receta.getRecetasIngrediente(indice)} ")     // trabajando desde aqui, meter otra lista de recetas para mostrar
+                indice.plus(1)
+            }
+
+            index.plus(1)
         }
     }
 

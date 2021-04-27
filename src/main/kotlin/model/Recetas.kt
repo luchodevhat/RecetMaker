@@ -14,14 +14,14 @@ open class Recetas {
     fun setRecetasNombre(nombre: String) {
         recetasNombre.add(nombre)
     }
-    fun getRecetasNombre(): String {
+    fun getRecetasNombre(numero: Int): String {
         return recetasNombre.get(numero)
     }
 
-    fun setRecetasIngrediente(ingrediente: String){
-        recetasIngredientes.add(ingrediente)
+    fun setRecetasIngrediente(ingrediente: MutableList<String>){
+        recetasIngredientes.add(ingrediente.toString())
     }
-    fun getRecetasIngrediente(): String {
+    fun getRecetasIngrediente(numero: Int): String {
         return recetasIngredientes.get(numero)
     }
 }
