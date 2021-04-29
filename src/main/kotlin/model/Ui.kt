@@ -62,27 +62,27 @@ class Ui: Recetas() {
 
             // guardado de los ingredientes de la receta
 
-                if (!(aceite.ingrediente?.equals(null) ?: (null == null))) {
-                    receta.setRecetasIngrediente(aceite.ingrediente)
-                }
-                if (!(carnes.ingrediente?.equals(null) ?: (null == null))) {
-                    receta.setRecetasIngrediente(carnes.ingrediente)
-                }
-                if (!(cereales.ingrediente?.equals(null) ?: (null == null))) {
-                    receta.setRecetasIngrediente(cereales.ingrediente)
-                }
-                if (!(frutas.ingrediente?.equals(null) ?: (null == null))) {
-                    receta.setRecetasIngrediente(frutas.ingrediente)
-                }
-                if (!(lacteos.ingrediente?.equals(null) ?: (null == null))) {
-                    receta.setRecetasIngrediente(lacteos.ingrediente)
-                }
-                if (!(verduras.ingrediente?.equals(null) ?: (null == null))) {
-                    receta.setRecetasIngrediente(verduras.ingrediente)
-                }
+            if (!(aceite.ingrediente?.equals(null) ?: (null == null))) {
+                receta.setRecetasIngrediente(aceite.ingrediente)
+            }
+            if (!(carnes.ingrediente?.equals(null) ?: (null == null))) {
+                receta.setRecetasIngrediente(carnes.ingrediente)
+            }
+            if (!(cereales.ingrediente?.equals(null) ?: (null == null))) {
+                receta.setRecetasIngrediente(cereales.ingrediente)
+            }
+            if (!(frutas.ingrediente?.equals(null) ?: (null == null))) {
+                receta.setRecetasIngrediente(frutas.ingrediente)
+            }
+            if (!(lacteos.ingrediente?.equals(null) ?: (null == null))) {
+                receta.setRecetasIngrediente(lacteos.ingrediente)
+            }
+            if (!(verduras.ingrediente?.equals(null) ?: (null == null))) {
+                receta.setRecetasIngrediente(verduras.ingrediente)
+            }
 
 
-           // guardado del nombre de la receta
+            // guardado del nombre de la receta
             println("Nombre de la receta:")
             nombreReceta = readLine()!!
             receta.setRecetasNombre(nombreReceta)
